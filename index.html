@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login System with Keystroke Dynamics</title>
+    <style>
+        .feedback {
+            margin-top: 10px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Register</h2>
+    <form id="registerForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Register</button>
+        <div id="registerFeedback" class="feedback"></div>
+    </form>
+
+    <h2>Login</h2>
+    <form id="loginForm">
+        <label for="usernameLogin">Username:</label>
+        <input type="text" id="usernameLogin" name="username" required>
+        <label for="passwordLogin">Password:</label>
+        <input type="password" id="passwordLogin" name="password" required>
+        <button type="submit">Login</button>
+        <div id="loginFeedback" class="feedback"></div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
