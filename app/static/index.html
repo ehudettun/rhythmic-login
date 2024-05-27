@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhythmic Login Proof of Concept</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        h2 {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        input[type="text"], input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .feedback {
+            margin-top: 10px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rhythmic Login POC</h1>
+        <p>This is a proof of concept for the idea of rhythmic login. The system authenticates not only by confirming the password but also by the rhythm in which the password is typed.</p>
+        
+        <h2>Register</h2>
+        <form id="registerForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Register</button>
+            <div id="registerFeedback" class="feedback"></div>
+        </form>
+
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="usernameLogin">Username:</label>
+            <input type="text" id="usernameLogin" name="username" required>
+            <label for="passwordLogin">Password:</label>
+            <input type="password" id="passwordLogin" name="password" required>
+            <button type="submit">Login</button>
+            <div id="loginFeedback" class="feedback"></div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

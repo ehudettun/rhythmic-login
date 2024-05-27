@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const registerIntervals = calculateIntervals(registerTimingData);
 
         try {
-            const response = await fetch('http://localhost:3000/register', {
+            const response = await fetch('/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password, intervals: registerIntervals })
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const loginIntervals = calculateIntervals(loginTimingData);
 
         try {
-            const response = await fetch('http://localhost:3000/login', {
+            const response = await fetch('/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password, intervals: loginIntervals })
