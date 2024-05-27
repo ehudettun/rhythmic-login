@@ -23,6 +23,10 @@ The potential of Rhythmic Login extends far beyond simple login screens. Here’
 
 Are you a rhythm master? Do you have a keen sense of timing? Rhythmic Login not only secures your data but also lets you showcase your unique typing cadence. It's an exciting frontier for both security professionals and rhythm enthusiasts who appreciate the art of timing.
 
+## Live Demo
+
+Check out our [live demo](http://rhythmic-login-env-2.eba-mmf73fta.us-east-2.elasticbeanstalk.com/) to see Rhythmic Login in action.
+
 ## Join Us on This Exciting Journey
 
 We invite you to explore, test, and contribute to the Rhythmic Login POC. Together, we can shape a more secure, personalized, and exciting future for digital authentication.
