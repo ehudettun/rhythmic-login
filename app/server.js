@@ -9,6 +9,9 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+// Serve static assets
+app.use(express.static('static'));
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -17,6 +20,9 @@ const userSchema = new mongoose.Schema({
     password: String,
     intervals: [Number]
 });
+
+// Create unique index for username
+userSchema.index({ username: 1 }, { unique: true });
 
 const User = mongoose.model('User', userSchema);
 
@@ -30,7 +36,12 @@ app.post('/register', async (req, res) => {
         await newUser.save();
         res.status(201).json({ message: 'User registered successfully!' });
     } catch (err) {
-        res.status(400).json({ message: 'Error registering user', error: err.message });
+        if (err.code === 11000) {
+            // Duplicate key error
+            res.status(400).json({ message: 'Username already exists' });
+        } else {
+            res.status(400).json({ message: 'Error registering user', error: err.message });
+        }
     }
 });
 
@@ -68,7 +79,7 @@ function compareIntervals(storedIntervals, inputIntervals) {
     return averageDifference < 100; // Adjust this threshold as needed
 }
 
-const port = 3000;
+const port = 8080;
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
